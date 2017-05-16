@@ -57,7 +57,7 @@ ray camera::get_ray(float s, float t)
 }
 
 
-void camera::render(Game game)
+void camera::render(Game* game)
 {
 
 	for (int y = height; y >= 0; y--)
@@ -83,7 +83,7 @@ void camera::render(Game game)
 				}
 			}
 
-			game.drawPixel(x, y, color.x(), color.y(), color.z());
+			game->drawPixel(x, y, color.x(), color.y(), color.z());
 		}
 	}
 }

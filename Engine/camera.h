@@ -13,7 +13,7 @@ public:
 	ray get_ray(float u, float v);
 	void add_object(object* o);
 
-	void render(Game game);
+	void render(Game* game);
 
 private:
 	Vector3 origin;
