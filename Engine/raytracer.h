@@ -1,12 +1,9 @@
 #pragma once
-
-
 class Game;
 
 class raytracer
 {
 public:
-	void dotrace(Game* game);
-private:
+	void raytracer::dotrace(Game* game, int width, int height, int sample_count);
 
 };

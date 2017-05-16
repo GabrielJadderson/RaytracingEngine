@@ -40,3 +40,9 @@ typedef FLOAT               *PFLOAT;
 #define WIDTH 500;
 #define HEIGHT 500;
 #define SAMPLE_COUNT 1;
+
+
+double randd()
+{
+	return (double) rand() / (RAND_MAX + 1.0);
+}

@@ -1,7 +1,7 @@
 #include "MainWindow.h"
 #include "Game.h"
 
-Game::Game(MainWindow& wnd) : wnd(wnd), gfx(wnd)
+Game::Game(MainWindow& wnd, int w, int h) : wnd(wnd), gfx(wnd, w, h)
 {
 	//MessageBox(nullptr, L"Exception caught at main window creation.", L"Unhandled Non-STL Exception", MB_OK);
 }
@@ -34,6 +34,7 @@ void Game::end()
 {
 	gfx.EndFrame();
 }
+
 
 //implement
 void Game::screenshot()

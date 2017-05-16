@@ -145,12 +145,13 @@
     <ClInclude Include="DXErr.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="hitable.h" />
+    <ClInclude Include="hitable_list.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="material.h" />
     <ClInclude Include="Mouse.h" />
-    <ClInclude Include="object.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="raytracer.h" />
     <ClInclude Include="Resource.h" />
@@ -158,7 +159,6 @@
     <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="camera.cpp" />
     <ClCompile Include="color_hsla.cpp" />
     <ClCompile Include="color_rgba.cpp" />
     <ClCompile Include="DXErr.cpp" />
@@ -167,12 +167,8 @@
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
-    <ClCompile Include="material.cpp" />
     <ClCompile Include="Mouse.cpp" />
-    <ClCompile Include="object.cpp" />
-    <ClCompile Include="ray.cpp" />
     <ClCompile Include="raytracer.cpp" />
-    <ClCompile Include="sphere.cpp" />
     <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>

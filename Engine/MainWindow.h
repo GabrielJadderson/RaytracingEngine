@@ -9,7 +9,7 @@
 // for granting special access to hWnd only for Graphics constructor
 class HWNDKey
 {
-	friend Graphics::Graphics(HWNDKey&);
+	friend Graphics::Graphics(HWNDKey&, int w, int h);
 public:
 	HWNDKey(const HWNDKey&) = delete;
 	HWNDKey& operator=(HWNDKey&) = delete;
@@ -30,7 +30,7 @@ public:
 		virtual std::wstring GetExceptionType() const override { return L"Windows Exception"; }
 	};
 public:
-	MainWindow(HINSTANCE hInst, wchar_t* pArgs);
+	MainWindow(HINSTANCE hInst, wchar_t* pArgs, int width, int height);
 	MainWindow(const MainWindow&) = delete;
 	MainWindow& operator=(const MainWindow&) = delete;
 	~MainWindow();
@@ -58,4 +58,8 @@ private:
 	static constexpr wchar_t* wndClassName = L"Raytracing Engine";
 	HINSTANCE hInst = nullptr;
 	std::wstring args;
+
+private:
+	int width;
+	int height;
 };

@@ -1,28 +1,18 @@
-#pragma once
-#include "include.h"
+#ifndef RAYH
+#define RAYH
 #include "Vector3.h"
-#include "material.h"
-
-struct ray_info
-{
-	Vector3 point;
-	Vector3 normal;
-	float t;
-	material* mat;
-};
 
 class ray
 {
 public:
-	ray();
-	ray(Vector3 origin, Vector3 direction);
-	Vector3 origin, direction;
+	ray() {}
+	ray(const Vector3& a, const Vector3& b) { A = a; B = b; }
+	Vector3 origin() const { return A; }
+	Vector3 direction() const { return B; }
+	Vector3 point_at_parameter(float t) const { return A + t*B; }
 
-
-	inline Vector3 point_at_perimeter(float t)
-	{
-		return origin + (direction * t);
-	}
-
-	void traceray(ray_info &info);
+	Vector3 A;
+	Vector3 B;
 };
+
+#endif

@@ -7,7 +7,7 @@
 class Game
 {
 public:
-	Game(class MainWindow& wnd);
+	Game(class MainWindow& wnd, int w, int h);
 	Game(const Game&) = delete;
 	Game& operator=(const Game&) = delete;
 	void Game::drawPixel(int x, int y, int r, int g, int b);

@@ -20,19 +20,22 @@ namespace FramebufferShaders
 
 using Microsoft::WRL::ComPtr;
 
-Graphics::Graphics(HWNDKey& key)
+Graphics::Graphics(HWNDKey& key, int width, int height)
 {
 	assert(key.hWnd != nullptr);
 
 	//////////////////////////////////////////////////////
 	// create device and swap chain/get render target view
+	this->ScreenWidth = width;
+	this->ScreenHeight = height;
+
 	DXGI_SWAP_CHAIN_DESC sd = {};
 	sd.BufferCount = 1;
-	sd.BufferDesc.Width = Graphics::ScreenWidth;
-	sd.BufferDesc.Height = Graphics::ScreenHeight;
+	sd.BufferDesc.Width = this->ScreenWidth;
+	sd.BufferDesc.Height = this->ScreenHeight;
 	sd.BufferDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;
 	sd.BufferDesc.RefreshRate.Numerator = 1;
-	sd.BufferDesc.RefreshRate.Denominator = 60;
+	sd.BufferDesc.RefreshRate.Denominator = 1;//refresh rate, set to 1 for raytracer
 	sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 	sd.OutputWindow = key.hWnd;
 	sd.SampleDesc.Count = 1;
@@ -222,6 +225,16 @@ Graphics::~Graphics()
 	}
 	// clear the state of the device context before destruction
 	if (pImmediateContext) pImmediateContext->ClearState();
+}
+
+const int Graphics::getWidth()
+{
+	return this->ScreenWidth;
+}
+
+const int Graphics::getHeight()
+{
+	return this->ScreenHeight;
 }
 
 void Graphics::EndFrame()
