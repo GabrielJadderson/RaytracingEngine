@@ -6,7 +6,7 @@
 #include "raytracer.h"
 #include "Game.h"
 
-void raytracer::dotrace(Game &game)
+void raytracer::dotrace(Game game)
 {
 	sphere* gabe = new sphere(Vector3(0, 0, -2), 1, material(Vector3(255, 0, 0)));
 	sphere* fred = new sphere(Vector3(0, 0, -3), 1, material(Vector3(0, 255, 0)));
@@ -19,7 +19,7 @@ void raytracer::dotrace(Game &game)
 	float aspect = 10;
 	camera camera(origin, lookDirection, Vector3(0, 1, 0), fov, aspect, aperture, focus_distance);
 
-	camera.render(&game);
+	//camera.render(game);
 
 	//camera::get()->set_size(500, 500);
 

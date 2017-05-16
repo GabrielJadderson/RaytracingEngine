@@ -17,7 +17,7 @@ int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR pArgs, INT)
 			theGame.end();
 
 			theGame.begin();
-			raytracer raytracer();
+			//raytracer raytracer();
 			//raytracer().dotrace(theGame); //FIX THIS i want to dereference the pointer in function to be called two layers below in another function.
 			theGame.end();
 

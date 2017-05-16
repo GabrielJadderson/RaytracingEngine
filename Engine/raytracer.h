@@ -6,7 +6,7 @@ class Game;
 class raytracer
 {
 public:
-	void static dotrace(Game &game);
+	void dotrace(Game game);
 private:
 
 };
